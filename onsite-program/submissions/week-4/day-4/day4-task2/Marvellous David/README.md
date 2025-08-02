@@ -1,1 +1,1 @@
-EmployeeManagement ContractDeployedTo: 0x540af7a1b63D9a7eA6B699dB5a4ee7e28bbF3FFB
+EmployeeManagementContractDeployedTo: 0x540af7a1b63D9a7eA6B699dB5a4ee7e28bbF3FFB
