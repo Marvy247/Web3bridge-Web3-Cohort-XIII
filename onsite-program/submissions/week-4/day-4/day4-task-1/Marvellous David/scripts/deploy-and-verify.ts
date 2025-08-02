@@ -4,18 +4,18 @@ import { config } from "dotenv";
 config();
 
 async function main() {
-  console.log("Deploying Storage contract to Lisk Sepolia...");
+  console.log("Deploying Web3BridgeGarage contract to Lisk Sepolia...");
   
-  const Storage = await ethers.getContractFactory("Storage");
-  const storage = await Storage.deploy();
+  const Web3BridgeGarage = await ethers.getContractFactory("Web3BridgeGarage");
+  const web3BridgeGarage = await Web3BridgeGarage.deploy();
   
-  await storage.waitForDeployment();
+  await web3BridgeGarage.waitForDeployment();
   
-  const contractAddress = await storage.getAddress();
-  console.log("Storage contract deployed to:", contractAddress);
+  const contractAddress = await web3BridgeGarage.getAddress();
+  console.log("Web3BridgeGarage contract deployed to:", contractAddress);
   
   console.log("\nWaiting for block confirmations...");
-  await storage.deploymentTransaction()?.wait(5);
+  await web3BridgeGarage.deploymentTransaction()?.wait(5);
   
   console.log("\nVerifying contract on Lisk Sepolia block explorer...");
   try {
