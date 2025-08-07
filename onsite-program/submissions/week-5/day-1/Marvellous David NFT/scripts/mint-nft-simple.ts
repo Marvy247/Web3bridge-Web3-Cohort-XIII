@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";
+import { ethers } from "ethers";
 
 async function main() {
   const PRIVATE_KEY = "dc28a227753f7cb3c5955d363350c6d7b2050cdc79828dba983925a6b456cb05";
@@ -17,8 +17,7 @@ async function main() {
 
   // Contract ABI for mintNFT function
   const contractABI = [
-    "function mintNFT(address to) public returns (uint256)",
-    "function _tokenIdCounter() public view returns (uint256)"
+    "function mintNFT(address to) public returns (uint256)"
   ];
 
   // Create contract instance
@@ -31,9 +30,10 @@ async function main() {
   const receipt = await tx.wait();
   console.log("Transaction confirmed in block:", receipt.blockNumber);
   
-  // Get the token ID
-  const tokenIdCounter = await contract._tokenIdCounter();
-  console.log("Minted NFT with token ID:", (tokenIdCounter - 1n).toString());
+  // The mintNFT function returns the token ID
+  const logs = receipt.logs;
+  console.log("NFT successfully minted!");
+  console.log("Transaction receipt:", receipt);
 }
 
 main()
