@@ -11,13 +11,13 @@ contract PiggyBankAccount is IPiggyBankAccount {
     address public factory;
     address public admin;
     
-    uint256 public constant BREAKING_FEE_PERCENTAGE = 3; // 3% fee
+    uint256 public constant BREAKING_FEE_PERCENTAGE = 3; 
     uint256 public constant FEE_DENOMINATOR = 100;
     
     uint256 private _planIdCounter;
     mapping(uint256 => SavingsPlan) public savingsPlans;
     mapping(address => uint256[]) public userPlans;
-    mapping(address => mapping(address => uint256)) public userTokenBalances; // user => token => balance
+    mapping(address => mapping(address => uint256)) public userTokenBalances; 
     
     modifier onlyFactory() {
         require(msg.sender == factory, "Only factory can call");
