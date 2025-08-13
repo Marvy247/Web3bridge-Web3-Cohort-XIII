@@ -117,7 +117,7 @@ contract UniswapPermitSwapper {
                 spender: address(this),
                 nonce: permit2Data.permit.details.nonce,
                 deadline: deadline
-            }),
+            }), 
             transferDetails,
             msg.sender,
             permit2Data.signature
