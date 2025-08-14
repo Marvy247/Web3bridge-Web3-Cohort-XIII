@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ERC7432.sol";
 
+
 /**
  * @title DAONFT
  * @dev NFT contract for DAO membership with role-based access using ERC-7432
@@ -65,21 +66,8 @@ contract DAONFT is ERC721, Ownable, ERC7432 {
     function setBaseURI(string memory baseTokenURI) external onlyOwner {
         _baseTokenURI = baseTokenURI;
     }
-    
-    /**
-     * @dev Returns the base URI for the token metadata
-     */
-    function _baseURI() internal view override returns (string memory) {
-        return _baseTokenURI;
-    }
 
-    /**
-     * @dev Returns the base URI for the token metadata
-     */
-    function baseURI() external view returns (string memory) {
-        return _baseURI();
-    }
-    
+   
     /**
      * @dev Checks if a token exists
      */
