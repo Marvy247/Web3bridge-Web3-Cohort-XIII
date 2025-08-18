@@ -1,0 +1,2 @@
+Contract address: 0xeDB56878b7B341c8D61Ba56f16Ed1Eb613b5827b
+Explorer URL: https://sepolia-blockscout.lisk.com/address/0xeDB56878b7B341c8D61Ba56f16Ed1Eb613b5827b
